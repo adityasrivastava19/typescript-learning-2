@@ -89,9 +89,11 @@ function ilegal(consumer:userType):boolean
 
 // union ans interswcrion 
 //1> intersection type -> the and operation 
+//Intersection (&): The value must satisfy both types simultaneously.
  type employe={
 name:string ,
 age:number
+addresh:string
  }
 
  type maneger={
@@ -103,7 +105,8 @@ age:number
 
  let e: employe = {
     name:"aditya",
-    age:21
+    age:21,
+    addresh:"motihari"
  }
  console.log(e.name+" the employe")
 
@@ -116,8 +119,19 @@ age:number
  let t:teamLead={
     name:"aditya teamlead",
     age:21,
-    id:1234
+    id:1234,
+    addresh:"motihari"
  }
  console.log(t.name)
  
- //2>
+ //2> union type -> the or 
+ //Union (|): The value can be either one type or both, 
+ // as long as it satisfies at least one type.
+type hr=employe|maneger
+
+let h={
+    name:"aditya hr",
+    id:1234,
+    age:1234
+}
+console.log(h.name)
