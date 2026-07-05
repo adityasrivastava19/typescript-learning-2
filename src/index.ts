@@ -135,3 +135,97 @@ let h={
     age:1234
 }
 console.log(h.name)
+// user and admin example by creating a functiom 
+interface user1 {
+    name:string,
+    age:number
+}
+
+interface admin{
+    name:string ,
+    addresh:string 
+}
+
+type userOrAdmin=user1|admin;
+function greetbyname(abc:userOrAdmin)
+{
+    console.log(abc.name);
+}
+let pp:user1={
+    name:"aditya user",
+    age: 21,
+}
+greetbyname(pp);
+let aa:admin={
+    name:"aditya admin",
+    addresh:"chandmari"
+}
+greetbyname(aa)
+
+//arrays in typescript
+//The ! is called the non-null assertion operator in TypeScript.
+function max(nums: number[]): number {
+    let max = -100000000000;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (max <= nums[i]!) {
+            max = nums[i]!;
+        }
+    }
+
+    return max;
+}
+let a:number[]=[1,3,4,56,7,8,]
+console.log("max = "+max(a))
+// problem 
+interface arrayuser{
+    firstName:string,
+     lastName:string,
+    age:number
+}
+function useriegal(used:arrayuser[])
+{
+    let ans:arrayuser[]=[];
+    for(let i=0;i<used.length;i++)
+    {
+        if(used[i]!.age>18){
+            ans.push(used[i]!);
+        }
+    }
+    return ans;
+}
+
+const users: arrayuser[] = [
+
+    {
+
+        firstName: "Aditya",
+
+        lastName: "Srivastava",
+
+        age: 22
+
+    },
+
+    {
+
+        firstName: "Rahul",
+
+        lastName: "Sharma",
+
+        age: 17
+
+    },
+
+    {
+
+        firstName: "Priya",
+
+        lastName: "Verma",
+
+        age: 25
+
+    }
+
+];
+console.log(useriegal(users))
